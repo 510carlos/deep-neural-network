@@ -3,8 +3,11 @@ import tensorflow as tf
 # lets get the data set
 #mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
 
-from sentiment import create_feature_sets_and_labels('pos.txt', 'neg.txt')
+from sentiment import create_feature_sets_and_labels
 import numpy as np
+
+train_x, train_y, test_x, test_y = create_feature_sets_and_labels('pos.txt', 'neg.txt')
+
 
 # lets create the hidden nodes
 n_nodes_hl1 = 500
@@ -17,7 +20,7 @@ batch_size = 100
 
 # height x width
 # squash out the image 24 x 24 = 784
-x = tf.placeholder('float', [None, len(train_x[0])])
+x = tf.placeholder('float', [None, len(train_x[0]) ])
 y = tf.placeholder('float', )
 
 def neural_network_model(data):
