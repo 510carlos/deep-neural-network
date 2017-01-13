@@ -38,21 +38,22 @@ def create_lexicon(pos, neg):
 def sample_handling(sample, lexicon, classification):
 	''' Extract the features from the sample'''
 	featureset = []
-	
-	
 	with open(sample, 'r') as f:
 		contents = f.readlines()
 		
+		# lets got through each line
 		for l in contents[:hm_lines]:
 			current_words = word_tokenize(l.lower().decode('utf8'))
 			current_words = [lemmatizer.lemmatize(i) for i in current_words]
 			features = np.zeros(len(lexicon))
 			
+			# from the words lets get features
 			for word in current_words:
 				if word.lower() in lexicon:
 					index_value = lexicon.index(word.lower().decode('utf8'))
 					features[index_value] += 1
-					
+			
+			# features and classifications
 			features = list(features)
 			featureset.append([features, classification])
 
@@ -62,18 +63,21 @@ def create_feature_sets_and_labels(pos, neg, test_size=0.1):
 	''' Creates the features & labels '''
 	lexicon = create_lexicon(pos, neg)
 	
+	# lets get all the features
 	features = []
 	features += sample_handling('pos.txt', lexicon, [1, 0])
 	features += sample_handling('neg.txt', lexicon, [0, 1])
 	
+	# shuffle data set so we don't skew the weights
 	random.shuffle(features)
-
 	features = np.array(features)
 	testing_size = int(test_size*len(features))
-
+	
+	# training data set
 	train_x = list(features[:,0][:-testing_size])
 	train_y = list(features[:,1][:-testing_size])
 
+	# testing data set
 	test_x = list(features[:,0][-testing_size:])
 	test_y = list(features[:,1][-testing_size:])
 
