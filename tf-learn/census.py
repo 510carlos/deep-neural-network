@@ -108,8 +108,6 @@ results = m.evaluate(input_fn=eval_input_fn, steps=1)
 
 
 for key in sorted(results):
-	if key == "capital_gain":
-		continue
 	print key, results[key]
 
 
