@@ -5,17 +5,23 @@ This helped me write AI agents with public data sets such as: MNIST.
 
 
 ### Convolutional Neural Network
-  - Example 1
-  - Example 1
-  - Example 1
+  - TFLearn Framework
+  - Deep MNIST Convolutional Neural Network
 ### Recurrent Neural Network
-  - Example 1
-  - Example 1
-  - Example 1
+  - Recurrent Neural Network
+  - Dynamic Recurrent Neural Network
+  - Bi Directional Recurrent Neural Network
 ### Neural Network
-  - Example 1
-  - Example 1
+  - MNIST Deep Neural Network
+  - Wide and Deep Neural Network with Census Data
+  - Sentiment Analysis with text
+  - Iris Example with Census data set
+  - Sparse Model with Census data set
+  - Linear Example with Census data set
 ### AutoEncoder
   -[Auto Encoder with MNIST](https://github.com/510carlos/deep-neural-network/blob/arrange/AutoEncoder/Auto%20Encoder.ipynb)
 ### Misc
-  - Example 1
+  - Rain Drop Equation
+  - Fractual Equation
+  - Tensorboard
+  - Save/Restore Weights
