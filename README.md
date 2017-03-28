@@ -1,5 +1,3 @@
-deep-neural-network
-
 # Welcome To The Code! 
 
 Here is a collection of examples which helped me understand machine learning techniques. 
