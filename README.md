@@ -19,7 +19,7 @@ This helped me write AI agents with public data sets such as: MNIST.
   - Sparse Model with Census data set
   - Linear Example with Census data set
 ### AutoEncoder
-  -[Auto Encoder with MNIST](https://github.com/510carlos/deep-neural-network/blob/arrange/AutoEncoder/Auto%20Encoder.ipynb)
+  - [Auto Encoder with MNIST](https://github.com/510carlos/deep-neural-network/blob/arrange/AutoEncoder/Auto%20Encoder.ipynb)
 ### Misc
   - Rain Drop Equation
   - Fractual Equation
