@@ -7,7 +7,7 @@ deep with deep learning. Before we start we need get the input
 data and define a few paramaters such as: hyper paramaters,
 network paramaters, define the weights and define the TF graph."""
 from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+mnist = input_data.read_data_sets("../data-sets/MNIST/", one_hot=True)
 # parameters
 learning_rate = 0.001
 training_iters = 100000
@@ -21,8 +21,8 @@ n_hidden = 128
 n_classes = 10
 
 # defince weights & biases
-weights = {'out': tf.Varibale(tf.random_normal([2*n_hidden, n_classes]))}
-biases = {'out': tf.Varibale(tf.random_normal([n_classes]))}
+weights = {'out': tf.Variable(tf.random_normal([2*n_hidden, n_classes]))}
+biases = {'out': tf.Variable(tf.random_normal([n_classes]))}
 
 # define the graph
 x = tf.placeholder("float", [None, n_steps, n_input])
@@ -62,7 +62,7 @@ pred = BiRNN(x, weights, biases)
 training and evaluation. To train we need to define the cost
 function and the optimizer function. To evaluate the model"""
 # define loss and optimizer
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, lanels=y))
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
 
 # evaluate model
@@ -78,13 +78,13 @@ test our model with the seperate test  data"""
 with tf.Session() as sess:
   sess.run(init)
   step = 1
-  with step * batch_size < training_iters:
+  while step * batch_size < training_iters:
     # lets get the data in batches
     batch_x, batch_y = mnist.train.next_batch(batch_size)
     
     # reshape the data to 28 seq of 28 elements to run optimization
     batch_x = batch_x.reshape((batch_size, n_steps, n_input))
-    sess.run(optimization, feed_dict={x: batch_x, y: batch_y})
+    sess.run(optimizer, feed_dict={x: batch_x, y: batch_y})
     
     if step % display_step == 0:
       # calculate batch accuracy & loss
