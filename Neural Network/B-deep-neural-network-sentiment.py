@@ -6,7 +6,10 @@ import tensorflow as tf
 from sentiment import create_feature_sets_and_labels
 import numpy as np
 
-train_x, train_y, test_x, test_y = create_feature_sets_and_labels('pos.txt', 'neg.txt')
+positive_text_path = "../data-sets/body-text/pos.txt"
+negative_text_path = "../data-sets/body-text/neg.txt"
+
+train_x, train_y, test_x, test_y = create_feature_sets_and_labels(positive_text_path, negative_text_path)
 
 
 # lets create the hidden nodes

@@ -5,7 +5,7 @@ import tensorflow as tf
 
 # import mnist data ser
 from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+mnist = input_data.read_data_sets("../data-sets/MNIST", one_hot=True)
 
 """ We are going to define some parameters we use in the model. 
 We are going to start with the learning rate. We are going to define in

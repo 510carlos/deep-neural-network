@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
 
 # lets get the data set
-mnist = input_data.read_data_sets("/tmp/data/", one_hot=True)
+mnist = input_data.read_data_sets("../data-sets/MNIST", one_hot=True)
 
 # lets create the hidden nodes
 n_nodes_hl1 = 500

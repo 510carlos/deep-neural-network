@@ -4,13 +4,14 @@ Here is a collection of examples which helped me understand machine learning tec
 This helped me write AI agents with public data sets such as: MNIST.
 
 
+
+### Recurrent Neural Network
+  - [Recurrent Neural Network](https://github.com/510carlos/deep-neural-network/blob/master/Recurrent%20Neural%20Network/Recurrent%20Neural%20Network.ipynb)
+  - [Dynamic Recurrent Neural Network](https://github.com/510carlos/deep-neural-network/blob/master/Recurrent%20Neural%20Network/Dynamic%20Recurrent%20Neural%20Network.ipynb)
+  - [Bi Directional Recurrent Neural Network](https://github.com/510carlos/deep-neural-network/blob/master/Recurrent%20Neural%20Network/Bi-Directional%20Recurrent%20Neural%20Network.ipynb)
 ### Convolutional Neural Network
   - TFLearn Framework
   - Deep MNIST Convolutional Neural Network
-### Recurrent Neural Network
-  - Recurrent Neural Network
-  - Dynamic Recurrent Neural Network
-  - Bi Directional Recurrent Neural Network
 ### Neural Network
   - MNIST Deep Neural Network
   - Wide and Deep Neural Network with Census Data

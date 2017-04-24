@@ -6,8 +6,8 @@ import tensorflow as tf
 import numpy as np
 
 # Data Sets
-IRIS_TRAINING = "iris_training.csv"
-IRIS_TEST = "iris_test.csv"
+IRIS_TRAINING = "../data-sets/iris/iris_training.csv"
+IRIS_TEST = "../data-sets/iris/iris_test.csv"
 
 #load datasets
 training_set = tf.contrib.learn.datasets.base.load_csv_with_header(

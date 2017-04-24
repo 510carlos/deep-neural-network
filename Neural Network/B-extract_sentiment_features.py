@@ -7,6 +7,8 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 from collections import Counter
 
+positive_text_path = "../data-sets/body-text/pos.txt"
+negative_text_path = "../data-sets/body-text/neg.txt"
 
 lemmatizer = WordNetLemmatizer()
 hm_lines = 10000000
@@ -65,8 +67,8 @@ def create_feature_sets_and_labels(pos, neg, test_size=0.1):
 	
 	# lets get all the features
 	features = []
-	features += sample_handling('pos.txt', lexicon, [1, 0])
-	features += sample_handling('neg.txt', lexicon, [0, 1])
+	features += sample_handling(positive_text_path, lexicon, [1, 0])
+	features += sample_handling(negative_text_path, lexicon, [0, 1])
 	
 	# shuffle data set so we don't skew the weights
 	random.shuffle(features)
