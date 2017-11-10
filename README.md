@@ -26,3 +26,5 @@ This helped me write AI agents with public data sets such as: MNIST.
   - Fractual Equation
   - Tensorboard
   - Save/Restore Weights
+
+Tensorflow 1.0.1
